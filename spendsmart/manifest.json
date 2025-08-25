@@ -1,0 +1,23 @@
+{
+    "name": "SpendSmart",
+    "short_name": "SpendSmart",
+    "description": "Your personal money management app.",
+    "start_url": "./index.html",
+    "display": "standalone",
+    "background_color": "#ebecec",
+    "theme_color": "#25aaa5",
+    "icons": [
+        {
+            "src": "./images/SpendSmart.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "./images/SpendSmart.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}

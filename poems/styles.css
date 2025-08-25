@@ -1,0 +1,813 @@
+:root {
+  --bg-primary-light: #f0f2f5;
+  --bg-secondary-light: #ffffff;
+  --text-primary-light: #1a1a1c;
+  --text-secondary-light: #7a7a7a;
+  --border-light: #e8e8ed;
+  --input-bg-light: #f8f8fa;
+  --input-border-light: #dcdce0;
+  --card-bg-light: #fcfcfc;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --card-shadow-light: rgba(0, 0, 0, 0.07);
+  --focus-ring-light: rgba(0, 122, 255, 0.15);
+  --scrollbar-track-light: #e9ecef;
+  --scrollbar-thumb-light: #c7c7cc;
+  --popup-overlay-bg-light: rgba(255, 255, 255, 0.95);
+  --popup-shadow-light: rgba(0, 0, 0, 0.15);
+  --back-btn-bg-light: #eef0f3;
+  --hover-bg-light: rgba(0, 0, 0, 0.05);
+  --control-box-bg-light: #f5f5f7;
+  --control-box-border-light: #e0e0e0;
+
+  --bg-primary-dark: #121212;
+  --bg-secondary-dark: #1e1e1e;
+  --text-primary-dark: #f0f0f0;
+  --text-secondary-dark: #b0b0b0;
+  --border-dark: #333333;
+  --input-bg-dark: #2a2a2a;
+  --input-border-dark: #444444;
+  --card-bg-dark: #282828;
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+  --card-shadow-dark: rgba(0, 0, 0, 0.2);
+  --focus-ring-dark: rgba(0, 122, 255, 0.3);
+  --scrollbar-track-dark: #3a3a3a;
+  --scrollbar-thumb-dark: #666666;
+  --popup-overlay-bg-dark: rgba(0, 0, 0, 0.85);
+  --popup-shadow-dark: rgba(0, 0, 0, 0.4);
+  --back-btn-bg-dark: #3a3a3a;
+  --hover-bg-dark: rgba(255, 255, 255, 0.08);
+  --control-box-bg-dark: #2a2a2a;
+  --control-box-border-dark: #444444;
+
+  --bg-primary-glass: rgba(255, 255, 255, 0.2);
+  --bg-secondary-glass: rgba(255, 255, 255, 0.25);
+  --text-primary-glass: #333333;
+  --text-secondary-glass: #666666;
+  --border-glass: rgba(255, 255, 255, 0.3);
+  --input-bg-glass: rgba(255, 255, 255, 0.15);
+  --input-border-glass: rgba(255, 255, 255, 0.4);
+  --card-bg-glass: rgba(255, 255, 255, 0.2);
+  --shadow-glass: rgba(0, 0, 0, 0.12);
+  --card-shadow-glass: rgba(0, 0, 0, 0.08);
+  --focus-ring-glass: rgba(0, 122, 255, 0.35);
+  --scrollbar-track-glass: rgba(255, 255, 255, 0.1);
+  --scrollbar-thumb-glass: rgba(255, 255, 255, 0.4);
+  --popup-overlay-bg-glass: rgba(255, 255, 255, 0.3);
+  --popup-shadow-glass: rgba(0, 0, 0, 0.15);
+  --back-btn-bg-glass: rgba(255, 255, 255, 0.2);
+  --hover-bg-glass: rgba(255, 255, 255, 0.12);
+  --control-box-bg-glass: rgba(255, 255, 255, 0.15);
+  --control-box-border-glass: rgba(255, 255, 255, 0.3);
+
+  --backdrop-filter-value: blur(40px);
+
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --border-color: var(--border-light);
+  --input-bg: var(--input-bg-light);
+  --input-border: var(--input-border-light);
+  --card-bg: var(--card-bg-light);
+  --shadow-color: var(--shadow-light);
+  --card-shadow-color: var(--card-shadow-light);
+  --focus-ring-color: var(--focus-ring-light);
+  --scrollbar-track-color: var(--scrollbar-track-light);
+  --scrollbar-thumb-color: var(--scrollbar-thumb-light);
+  --popup-overlay-bg: var(--popup-overlay-bg-light);
+  --popup-shadow-color: var(--popup-shadow-light);
+  --back-btn-bg: var(--back-btn-bg-light);
+  --hover-bg: var(--hover-bg-light);
+  --control-box-bg: var(--control-box-bg-light);
+  --control-box-border: var(--control-box-border-light);
+  --backdrop-filter-value: none;
+}
+
+body.light-theme {
+  --bg-primary: var(--bg-primary-light);
+  --bg-secondary: var(--bg-secondary-light);
+  --text-primary: var(--text-primary-light);
+  --text-secondary: var(--text-secondary-light);
+  --border-color: var(--border-light);
+  --input-bg: var(--input-bg-light);
+  --input-border: var(--input-border-light);
+  --card-bg: var(--card-bg-light);
+  --shadow-color: var(--shadow-light);
+  --card-shadow-color: var(--card-shadow-light);
+  --focus-ring-color: var(--focus-ring-light);
+  --scrollbar-track-color: var(--scrollbar-track-light);
+  --scrollbar-thumb-color: var(--scrollbar-thumb-light);
+  --popup-overlay-bg: var(--popup-overlay-bg-light);
+  --popup-shadow-color: var(--popup-shadow-light);
+  --back-btn-bg: var(--back-btn-bg-light);
+  --hover-bg: var(--hover-bg-light);
+  --control-box-bg: var(--control-box-bg-light);
+  --control-box-border: var(--control-box-border-light);
+  --backdrop-filter-value: none;
+  background-image: none;
+}
+
+body.dark-theme {
+  --bg-primary: var(--bg-primary-dark);
+  --bg-secondary: var(--bg-secondary-dark);
+  --text-primary: var(--text-primary-dark);
+  --text-secondary: var(--text-secondary-dark);
+  --border-color: var(--border-dark);
+  --input-bg: var(--input-bg-dark);
+  --input-border: var(--input-border-dark);
+  --card-bg: var(--card-bg-dark);
+  --shadow-color: var(--shadow-dark);
+  --card-shadow-color: var(--card-shadow-dark);
+  --focus-ring-color: var(--focus-ring-dark);
+  --scrollbar-track-color: var(--scrollbar-track-dark);
+  --scrollbar-thumb-color: var(--scrollbar-thumb-dark);
+  --popup-overlay-bg: var(--popup-overlay-bg-dark);
+  --popup-shadow-color: var(--popup-shadow-dark);
+  --back-btn-bg: var(--back-btn-bg-dark);
+  --hover-bg: var(--hover-bg-dark);
+  --control-box-bg: var(--control-box-bg-dark);
+  --control-box-border: var(--control-box-border-dark);
+  --backdrop-filter-value: none;
+  background-image: none;
+}
+
+body.liquid-glass-theme {
+  --bg-primary: var(--bg-primary-glass);
+  --bg-secondary: var(--bg-secondary-glass);
+  --text-primary: var(--text-primary-glass);
+  --text-secondary: var(--text-secondary-glass);
+  --border-color: var(--border-glass);
+  --input-bg: var(--input-bg-glass);
+  --input-border: var(--input-border-glass);
+  --card-bg: var(--card-bg-glass);
+  --shadow-color: var(--shadow-glass);
+  --card-shadow-color: var(--card-shadow-glass);
+  --focus-ring-color: var(--focus-ring-glass);
+  --scrollbar-track-color: var(--scrollbar-track-glass);
+  --scrollbar-thumb-color: var(--scrollbar-thumb-glass);
+  --popup-overlay-bg: var(--popup-overlay-bg-glass);
+  --popup-shadow-color: var(--popup-shadow-glass);
+  --back-btn-bg: var(--back-btn-bg-glass);
+  --hover-bg: var(--hover-bg-glass);
+  --control-box-bg: var(--control-box-bg-glass);
+  --control-box-border: var(--control-box-border-glass);
+
+  --backdrop-filter-value: blur(40px);
+
+  background-image: url("https://i.pinimg.com/736x/73/78/08/737808da08f8b4346be24bf447176df9.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+
+  background-color: transparent;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.5s ease, color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text-secondary);
+}
+
+#app {
+  background-color: var(--bg-secondary);
+  border-radius: 30px;
+  box-shadow: 0 15px 40px var(--shadow-color);
+  padding: 50px;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease, backdrop-filter 0.5s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+}
+
+header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.website-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-primary);
+  letter-spacing: -0.03em;
+  margin: 0;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 0;
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.instagram-link-header {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #007aff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.instagram-link-header:hover {
+  color: #005bb5;
+}
+
+.instagram-icon-header {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  fill: none;
+}
+
+.main-content-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-top: 10px;
+}
+
+.controls-bar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-bottom: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.control-icon-btn {
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  border-radius: 15px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease-in-out;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+}
+
+.control-icon-btn:hover {
+  background-color: var(--hover-bg);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.control-icon {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+.search-input {
+  flex-grow: 1;
+  padding: 12px 18px;
+  border-radius: 15px;
+  border: 1px solid var(--input-border);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  background-color: var(--input-bg);
+  transition: all 0.25s ease-in-out, width 0.3s ease-in-out;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+}
+
+.search-input.visible {
+  width: 250px;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.search-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007aff;
+  box-shadow: 0 0 0 4px var(--focus-ring-color),
+    inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  background-color: var(--bg-secondary);
+}
+
+.theme-toggle-btn .theme-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.poem-list-view {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.poems-grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 28px;
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 12px;
+  margin-right: -12px;
+}
+
+.poems-grid p.text-center {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 60px 0;
+  font-size: 1.15rem;
+}
+
+.poem-card {
+  background-color: var(--card-bg);
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px var(--card-shadow-color);
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid var(--border-color);
+
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+}
+
+.poem-card:hover {
+  box-shadow: 0 12px 25px var(--card-shadow-color);
+  transform: translateY(-5px);
+}
+
+.poem-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.poem-card p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+.poem-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--popup-overlay-bg);
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+  z-index: 9999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.poem-popup-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.poem-popup-overlay.hidden {
+  display: none;
+}
+
+.single-poem-view {
+  background-color: var(--bg-secondary);
+  border-radius: 25px;
+  box-shadow: 0 15px 40px var(--popup-shadow-color);
+  padding: 40px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  box-sizing: border-box;
+  overflow: auto;
+  transform: scale(0.95);
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease,
+    box-shadow 0.3s ease, border-color 0.3s ease, backdrop-filter 0.5s ease;
+  border: 1px solid var(--border-color);
+  position: relative;
+
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+}
+
+.poem-popup-overlay.visible .single-poem-view {
+  transform: scale(1);
+}
+
+.top-back-share {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.back-button {
+  padding: 12px 22px;
+  background-color: var(--back-btn-bg);
+  color: var(--text-primary);
+  border-radius: 25px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    transform 0.1s ease-in-out, color 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+}
+
+.back-button:hover {
+  background-color: var(--hover-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-1px);
+}
+
+.back-button svg {
+  height: 22px;
+  width: 22px;
+  fill: currentColor;
+}
+
+#poem-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+  letter-spacing: -0.02em;
+}
+
+#poem-date {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+}
+
+.poem-description {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  line-height: 1.9;
+  white-space: pre-wrap;
+  flex-grow: 1;
+  padding-right: 12px;
+  margin-right: -12px;
+  margin-bottom: 20px;
+}
+
+.poem-author-info-popup {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  color: var(--text-secondary);
+}
+
+.author-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #007aff;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.instagram-link:hover {
+  color: #005bb5;
+}
+
+.instagram-icon {
+  width: 18px;
+  height: 18px;
+  stroke-width: 2;
+  fill: none;
+}
+
+.share-btn-poem {
+  background-color: var(--back-btn-bg);
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, box-shadow 0.2s ease,
+    transform 0.1s ease;
+  color: var(--text-primary);
+
+  backdrop-filter: var(--backdrop-filter-value);
+  -webkit-backdrop-filter: var(--backdrop-filter-value);
+}
+
+.share-btn-poem:hover {
+  background-color: var(--hover-bg);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+
+.fade-in-overlay {
+  animation: fadeInOverlay 0.3s ease-out forwards;
+}
+
+.fade-out-overlay {
+  animation: fadeOutOverlay 0.3s ease-in forwards;
+}
+
+@keyframes fadeInOverlay {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutOverlay {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  #app {
+    padding: 40px;
+    max-width: 90%;
+  }
+  .website-title {
+    font-size: 2.4rem;
+  }
+  .control-icon-btn {
+    padding: 10px;
+  }
+  .control-icon-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  .search-input.visible {
+    width: 180px;
+  }
+  .poems-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+  }
+  .poem-card h3 {
+    font-size: 1.3rem;
+  }
+  .single-poem-view {
+    padding: 30px;
+    max-width: 90%;
+  }
+  #poem-title {
+    font-size: 2.1rem;
+  }
+  .poem-description {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 20px;
+  }
+  #app {
+    padding: 30px;
+    border-radius: 25px;
+  }
+  .website-title {
+    font-size: 2rem;
+  }
+  .author-info {
+    margin-bottom: 15px;
+  }
+  .search-container,
+  .theme-toggle-btn,
+  #share-website-btn {
+    max-width: 48%;
+  }
+  .search-input.visible {
+    width: calc(100% - 60px);
+  }
+  .control-icon-btn {
+    padding: 10px;
+    border-radius: 12px;
+  }
+  .control-icon-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+  .poems-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .poem-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  .poem-card h3 {
+    font-size: 1.25rem;
+  }
+  .poem-popup-overlay {
+    padding: 15px;
+  }
+  .single-poem-view {
+    padding: 25px;
+    border-radius: 20px;
+  }
+  .back-button {
+    padding: 10px 18px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+  }
+  #poem-title {
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+  }
+  #poem-date {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+  .poem-description {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  .poem-author-info-popup {
+    padding-top: 15px;
+    gap: 6px;
+  }
+  .author-name {
+    font-size: 0.95rem;
+  }
+  .instagram-link {
+    font-size: 0.9rem;
+  }
+  .instagram-icon {
+    width: 16px;
+    height: 16px;
+  }
+  .share-btn-poem {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  #app {
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .website-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
+  .author-info {
+    margin-bottom: 10px;
+  }
+  .search-input.visible {
+    width: calc(100% - 60px);
+  }
+  .poem-card {
+    padding: 18px;
+  }
+  .poem-card h3 {
+    font-size: 1.1rem;
+  }
+  .single-poem-view {
+    padding: 20px;
+  }
+  #poem-title {
+    font-size: 1.6rem;
+  }
+  .poem-description {
+    font-size: 0.95rem;
+  }
+  .share-btn-poem {
+    bottom: 10px;
+    right: 10px;
+    padding: 6px;
+  }
+  .share-btn-poem svg {
+    width: 18px;
+    height: 18px;
+  }
+}
