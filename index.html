@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PreetProjects | A Creative Sandbox</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="light-mode">
+    <header class="header">
+      <nav class="navbar">
+        <a href="#" class="nav-logo">PreetProjects<span>.</span></a>
+        <div class="nav-menu">
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+          <a
+            href="https://preetsidhu.vercel.app"
+            class="nav-portfolio-link"
+            target="_blank"
+            >Main Portfolio <i class="fas fa-external-link-alt"></i
+          ></a>
+        </div>
+        <div class="theme-switcher">
+          <i class="fas fa-sun" id="theme-toggle"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1 class="hero-title">Creative Sandbox</h1>
+          <p class="hero-subtitle">
+            A personal space for my digital experiments, creative coding, and
+            fun little projects. Welcome to the lab!
+          </p>
+          <div class="stats-container">
+            <div class="stat-item">
+              <h3 id="project-count">0</h3>
+              <p>Total Projects</p>
+            </div>
+            <div class="stat-item">
+              <h3 id="category-count">0</h3>
+              <p>Categories</p>
+            </div>
+            <div class="stat-item">
+              <h3>2+</h3>
+              <p>Years of Code</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section">
+        <div class="projects-header">
+          <h2>Code & Creativity</h2>
+          <div class="controls-wrapper">
+            <div class="search-container">
+              <i class="fas fa-search"></i>
+              <input
+                type="text"
+                id="search-bar"
+                placeholder="Search projects..."
+              />
+            </div>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="tool">Tools</button>
+              <button class="filter-btn" data-filter="game">Games</button>
+              <button class="filter-btn" data-filter="creative">
+                Creative
+              </button>
+              <button class="filter-btn" data-filter="experiment">
+                Experiments
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="project-gallery" id="project-gallery"></div>
+      </section>
+
+      <section id="contact" class="contact-section">
+        <h2>Get In Touch</h2>
+        <p>
+          Have a question or just want to say hi?<br />Feel free to reach out.
+        </p>
+        <div class="social-links">
+          <a
+            href="https://github.com/manpreetsidhhu"
+            target="_blank"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/manpreetsinghsidhu"
+            target="_blank"
+            aria-label="LinkedIn"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+          <a
+            href="https://instagram.com/mpsidhhu"
+            target="_blank"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="mailto:imanpreetsidhhu@gmail.com" aria-label="Email"
+            ><i class="fas fa-envelope"></i
+          ></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div>
+          <p>&copy; 2025 Preet Sidhu. All Rights Reserved.</p>
+          <p class="footer-note">
+            This is my creative playground. Check out my main
+            <a href="https://manpreet.vercel.app" target="_blank"
+              >professional portfolio here</a
+            >.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="scroll-to-top" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>SpendSmart</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="./images/SpendSmart.png" />
+    <link rel="apple-touch-icon" href="./images/SpendSmart.png" />
+    <meta name="theme-color" content="#05948f" />
+  </head>
+  <body class="min-h-screen flex flex-col items-center justify-center p-0 m-0">
+    <div
+      id="splashScreen"
+      class="fixed inset-0 flex flex-col items-center justify-center bg-primary-teal z-[9999] transition-opacity duration-500"
+    >
+      <img
+        src="./images/SpendSmart.png"
+        alt="SpendSmart Logo"
+        class="w-32 h-32 mb-4 animate-pulse"
+      />
+      <h1 class="text-white text-4xl font-bold">SpendSmart</h1>
+    </div>
+
+    <!-- Custom Alert Container (Desktop) -->
+    <div
+      id="alertContainer"
+      class="fixed top-4 right-4 z-[9900] space-y-2 pointer-events-none"
+    ></div>
+
+    <!-- Main App Content -->
+    <div
+      id="appContent"
+      class="hidden w-full h-full flex flex-col sm:flex-row bg-bg-color transition-colors duration-300"
+    >
+      <!-- Desktop Sidebar Navigation -->
+      <aside
+        class="hidden sm:flex flex-col w-64 bg-header-bg shadow-lg py-8 px-4 transition-colors duration-300 custom-scrollbar"
+      >
+        <div class="flex items-center mb-10">
+          <img
+            src="./images/SpendSmart.png"
+            alt="SpendSmart Logo"
+            class="w-12 h-12 mr-3"
+          />
+          <h1 class="text-2xl font-bold text-text-color">SpendSmart</h1>
+        </div>
+        <nav class="flex-grow">
+          <button data-tab="dashboard" class="sidebar-nav-item active">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 mr-3"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+              />
+            </svg>
+            <span>Dashboard</span>
+          </button>
+          <button data-tab="wallets" class="sidebar-nav-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 mr-3"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+              />
+            </svg>
+            <span>Wallets</span>
+          </button>
+          <button data-tab="settings" class="sidebar-nav-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6 mb-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            <span>Settings</span>
+          </button>
+        </nav>
+        <!-- User Name at the very bottom -->
+        <div class="mt-auto text-center">
+          <span
+            id="userNameDisplay"
+            class="text-lg font-medium text-secondary-text"
+          ></span>
+        </div>
+      </aside>
+
+      <!-- Main Content Area (Tabs) -->
+      <main class="flex-grow w-full p-4 sm:p-8 custom-scrollbar">
+        <!-- Mobile Header -->
+        <header
+          class="sm:hidden flex flex-col items-center justify-center pt-6 pb-4"
+        >
+          <div class="flex items-center">
+            <img
+              src="./images/SpendSmart.png"
+              alt="SpendSmart Logo"
+              class="w-12 h-12 mr-3"
+            />
+            <h1 class="text-2xl font-bold text-text-color">SpendSmart</h1>
+          </div>
+        </header>
+
+        <!-- Dashboard Tab Content -->
+        <section id="dashboardTab" class="tab-content active">
+          <h2 class="text-3xl font-semibold text-text-color mb-3">
+            Welcome,
+            <span id="userNameDashboard" class="text-primary-teal"></span>
+          </h2>
+          <p class="text-lg text-secondary-text mb-8">Dashboard Overview</p>
+
+          <!-- Overall Balance Summary -->
+          <div class="card p-6 mb-8">
+            <h3 class="text-xl font-semibold text-secondary-text mb-3">
+              Total Balance
+            </h3>
+            <p
+              id="totalBalanceDisplay"
+              class="text-5xl font-bold text-primary-teal"
+            ></p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <button id="addTransactionBtn" class="btn-primary py-4">
+              Add Transaction
+            </button>
+            <button id="viewWalletsBtn" class="btn-secondary py-4 sm:hidden">
+              View Wallets
+            </button>
+          </div>
+
+          <!-- Transactions Section & Timeline -->
+          <h2 class="text-2xl font-semibold text-text-color mb-4">
+            Transactions Timeline
+          </h2>
+          <div class="mb-6">
+            <input
+              type="text"
+              id="transactionSearchInput"
+              placeholder="Search by amount, category, description, or wallet name..."
+              class="input-field w-full"
+            />
+          </div>
+          <div id="transactionsContainer" class="card p-0 overflow-hidden">
+            <!-- Transaction items will be rendered here -->
+          </div>
+          <p
+            id="noTransactionsMessage"
+            class="text-secondary-text text-center py-8 hidden"
+          >
+            You have no transactions.
+          </p>
+        </section>
+
+        <!-- Wallets Tab Content -->
+        <section id="walletsTab" class="tab-content hidden">
+          <h2 class="text-3xl font-semibold text-text-color mb-6">
+            Your Wallets
+          </h2>
+          <button id="addWalletBtn" class="btn-primary mb-6">
+            Add New Wallet
+          </button>
+          <div
+            id="walletsContainer"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          >
+            <!-- Wallet cards will be rendered here -->
+          </div>
+          <p
+            id="noWalletsMessage"
+            class="text-secondary-text text-center py-8 col-span-full hidden"
+          >
+            <span class="text-4xl">👛</span><br />
+            <span class="text-lg mt-2">You have no wallets. Create one.</span>
+          </p>
+        </section>
+
+        <!-- Settings Tab Content -->
+        <section id="settingsTab" class="tab-content hidden">
+          <h2 class="text-3xl font-semibold text-text-color mb-6">Settings</h2>
+
+          <!-- Profile Section -->
+          <div class="setting-card">
+            <h3 class="text-xl font-semibold text-text-color mb-3">Profile</h3>
+            <div class="mb-4">
+              <label for="userName" class="form-label">Your Name</label>
+              <input
+                type="text"
+                id="userName"
+                class="input-field"
+                placeholder="Enter your name"
+              />
+              <p id="userNameError" class="input-error-message hidden"></p>
+            </div>
+            <button id="saveProfileBtn" class="btn-primary">
+              Save Profile
+            </button>
+          </div>
+
+          <!-- Theme Section -->
+          <div class="setting-card">
+            <h3 class="text-xl font-semibold text-text-color mb-3">Theme</h3>
+            <div class="flex space-x-4">
+              <button id="lightThemeBtn" class="btn-outline">
+                Light Theme
+              </button>
+              <button id="darkThemeBtn" class="btn-outline">Dark Theme</button>
+            </div>
+          </div>
+
+          <!-- Currency Section -->
+          <div class="setting-card">
+            <h3 class="text-xl font-semibold text-text-color mb-3">Currency</h3>
+            <select id="currencySelect" class="input-field">
+              <!-- Options will be populated by JS -->
+            </select>
+            <button id="saveCurrencyBtn" class="btn-primary mt-4">
+              Save Currency
+            </button>
+          </div>
+
+          <!-- Recycle Bin Section -->
+          <div class="setting-card">
+            <h3 class="text-xl font-semibold text-text-color mb-3">
+              Recycle Bin
+            </h3>
+            <p
+              id="recycleBinEmptyMessage"
+              class="text-secondary-text text-center py-4 hidden"
+            >
+              Recycle bin is empty.
+            </p>
+            <div
+              id="recycleBinContainer"
+              class="divide-y divide-border-color custom-scrollbar"
+            >
+              <!-- Recycle bin items will be rendered here -->
+            </div>
+            <div class="mt-4">
+              <input
+                type="text"
+                id="clearRecycleBinInput"
+                class="input-field"
+                placeholder="Type CLEARRECYCLEBIN to confirm"
+              />
+              <button id="clearRecycleBinBtn" class="btn-danger mt-2">
+                Clear Recycle Bin
+              </button>
+            </div>
+          </div>
+
+          <!-- Developer Info Section -->
+          <div class="setting-card">
+            <h3 class="text-xl font-semibold text-text-color mb-3">
+              About the Developer
+            </h3>
+            <div class="flex items-center justify-between">
+              <p class="text-secondary-text">Developed by Manpreet S. Sidhu</p>
+              <a
+                href="https://www.instagram.com/mpsidhhu"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-secondary-text hover:text-primary-teal transition-colors"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-8 w-8"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.703.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.297-.048c.852-.04 1.433-.174 1.942-.372.526-.205.972-.478 1.417-.923.445-.444.719-.891.923-1.417.198-.51.333-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.297c-.04-.852-.174-1.433-.372-1.942a3.927 3.927 0 0 0-.923-1.417A3.917 3.917 0 0 0 13.24.42c-.51-.198-1.09-.333-1.942-.372C10.445.01 10.173 0 8 0zm0 1.442c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.282.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.282.11-.705.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.232-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.282-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.232s.008-2.389.046-3.232c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.843-.038 1.096-.047 3.232-.047z"
+                  />
+                  <path
+                    d="M8 4.658a3.342 3.342 0 1 0 0 6.684 3.342 3.342 0 0 0 0-6.684zm0 5.438a2.096 2.096 0 1 1 0-4.192 2.096 2.096 0 0 1 0 4.192z"
+                  />
+                  <circle cx="12.148" cy="3.852" r=".796" />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Danger Zone -->
+          <div class="setting-card border-red-500/50">
+            <h3 class="text-xl font-semibold text-red-500 mb-3">Danger Zone</h3>
+            <p class="text-secondary-text mb-4">
+              This action is irreversible and will permanently delete all your
+              wallets, transactions, and settings.
+            </p>
+            <button id="openClearDataBtn" class="btn-danger">
+              Clear All Data
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <!-- Mobile Bottom Navigation -->
+      <nav
+        class="mobile-nav flex sm:hidden w-full justify-around items-center fixed bottom-0 left-0 z-50"
+      >
+        <!-- Settings button moved to the left, separate -->
+        <button
+          data-tab="settings"
+          class="mobile-nav-item mobile-nav-settings-item"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mb-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+          </svg>
+          <span>Settings</span>
+        </button>
+        <button data-tab="dashboard" class="mobile-nav-item active">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mb-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"
+            />
+          </svg>
+          <span>Dashboard</span>
+        </button>
+        <button data-tab="wallets" class="mobile-nav-item">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 mb-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
+            />
+          </svg>
+          <span>Wallets</span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Modals -->
+
+    <!-- Add/Edit Transaction Modal -->
+    <div
+      id="transactionModal"
+      class="fixed inset-0 flex items-center justify-center modal-overlay hidden z-[9500]"
+    >
+      <div
+        class="bg-card-bg p-8 rounded-lg shadow-xl modal-content w-full max-w-md mx-4"
+      >
+        <h2
+          class="text-2xl font-bold text-text-color mb-6"
+          id="transactionModalTitle"
+        >
+          Add New Transaction
+        </h2>
+        <form id="transactionForm" class="space-y-4">
+          <div>
+            <label for="transactionType" class="form-label">Type</label>
+            <select id="transactionType" class="input-field">
+              <option value="expense">Expense</option>
+              <option value="income">Income</option>
+            </select>
+          </div>
+          <div>
+            <label for="transactionAmount" class="form-label">Amount</label>
+            <input
+              type="number"
+              id="transactionAmount"
+              step="0.01"
+              required
+              class="input-field"
+              placeholder="e.g., 50.00"
+            />
+            <p
+              id="transactionAmountError"
+              class="input-error-message hidden"
+            ></p>
+          </div>
+          <div>
+            <label for="transactionWallet" class="form-label">Wallet</label>
+            <select id="transactionWallet" required class="input-field">
+              <!-- Wallet options will be loaded here -->
+            </select>
+            <p
+              id="transactionWalletError"
+              class="input-error-message hidden"
+            ></p>
+          </div>
+          <div>
+            <label for="transactionCategory" class="form-label">Category</label>
+            <input
+              type="text"
+              id="transactionCategory"
+              required
+              class="input-field"
+              placeholder="e.g., Groceries, Salary"
+            />
+            <p
+              id="transactionCategoryError"
+              class="input-error-message hidden"
+            ></p>
+          </div>
+          <div>
+            <label for="transactionDate" class="form-label">Date</label>
+            <input
+              type="date"
+              id="transactionDate"
+              required
+              class="input-field"
+            />
+            <p id="transactionDateError" class="input-error-message hidden"></p>
+          </div>
+          <div>
+            <label for="transactionDescription" class="form-label"
+              >Description (Optional)</label
+            >
+            <textarea
+              id="transactionDescription"
+              rows="2"
+              class="input-field"
+              placeholder="e.g., Coffee at Starbucks"
+            ></textarea>
+          </div>
+          <div class="flex justify-end space-x-3">
+            <button type="button" id="cancelTransactionBtn" class="btn-outline">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Save Transaction</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add/Edit Wallet Modal -->
+    <div
+      id="walletModal"
+      class="fixed inset-0 flex items-center justify-center modal-overlay hidden z-[9500]"
+    >
+      <div
+        class="bg-card-bg p-8 rounded-lg shadow-xl modal-content w-full max-w-md mx-4"
+      >
+        <h2
+          class="text-2xl font-bold text-text-color mb-6"
+          id="walletModalTitle"
+        >
+          Add New Wallet
+        </h2>
+        <form id="walletForm" class="space-y-4">
+          <div>
+            <label for="walletName" class="form-label">Wallet Name</label>
+            <input
+              type="text"
+              id="walletName"
+              required
+              class="input-field"
+              placeholder="e.g., Cash, Bank Account"
+            />
+            <p id="walletNameError" class="input-error-message hidden"></p>
+          </div>
+          <div>
+            <label for="walletInitialBalance" class="form-label"
+              >Initial Balance</label
+            >
+            <input
+              type="number"
+              id="walletInitialBalance"
+              step="0.01"
+              value="0.00"
+              required
+              class="input-field"
+              placeholder="e.g., 1000.00"
+            />
+            <p
+              id="walletInitialBalanceError"
+              class="input-error-message hidden"
+            ></p>
+          </div>
+          <div class="flex justify-end space-x-3">
+            <button type="button" id="cancelWalletBtn" class="btn-outline">
+              Cancel
+            </button>
+            <button type="submit" class="btn-primary">Save Wallet</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Custom Confirmation/Info Alert Modal -->
+    <div
+      id="customAlertModal"
+      class="fixed inset-0 flex items-center justify-center modal-overlay hidden z-[9600]"
+    >
+      <div
+        class="bg-card-bg p-8 rounded-lg shadow-xl modal-content w-full max-w-sm mx-4 text-center"
+      >
+        <p id="customAlertMessage" class="text-text-color text-lg mb-6"></p>
+        <button id="customAlertCloseBtn" class="btn-primary">Got It</button>
+      </div>
+    </div>
+
+    <!-- View Wallet Transactions Modal -->
+    <div
+      id="viewWalletTransactionsModal"
+      class="fixed inset-0 flex items-center justify-center modal-overlay hidden z-[9500]"
+    >
+      <div
+        class="bg-card-bg p-8 rounded-lg shadow-xl modal-content w-full max-w-2xl mx-4"
+      >
+        <h2 class="text-2xl font-bold text-text-color mb-6">
+          Transactions for Wallet:
+          <span id="currentWalletName" class="text-primary-teal"></span>
+        </h2>
+        <div
+          id="walletTransactionsContainer"
+          class="max-h-96 overflow-y-auto custom-scrollbar card p-0"
+        >
+          <p
+            id="noWalletTransactionsMessage"
+            class="text-secondary-text text-center py-8 hidden"
+          >
+            No transactions for this wallet yet.
+          </p>
+        </div>
+        <div class="flex justify-end mt-6">
+          <button
+            type="button"
+            id="closeWalletTransactionsBtn"
+            class="btn-outline"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clear All Data Modal -->
+    <div
+      id="clearDataModal"
+      class="fixed inset-0 flex items-center justify-center modal-overlay hidden z-[9700]"
+    >
+      <div
+        class="bg-card-bg p-8 rounded-lg shadow-xl modal-content w-full max-w-md mx-4"
+      >
+        <h2 class="text-2xl font-bold text-red-500 mb-4">
+          Are you absolutely sure?
+        </h2>
+        <p class="text-secondary-text mb-6">
+          This will permanently delete all your data. To confirm, please type
+          <strong class="text-text-color">DELETEMYDATA</strong> in both fields
+          below.
+        </p>
+        <form id="clearDataForm" class="space-y-4">
+          <div>
+            <input
+              type="text"
+              id="clearDataConfirm1"
+              class="input-field"
+              placeholder="DELETEMYDATA"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              id="clearDataConfirm2"
+              class="input-field"
+              placeholder="DELETEMYDATA"
+            />
+          </div>
+          <p id="clearDataError" class="input-error-message hidden"></p>
+          <div class="flex justify-end space-x-3 pt-2">
+            <button type="button" id="cancelClearDataBtn" class="btn-outline">
+              Cancel
+            </button>
+            <button type="submit" class="btn-danger">Delete All My Data</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
