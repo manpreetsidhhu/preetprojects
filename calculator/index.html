@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iCalc - iOS Style Calculator</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="apple.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="iCalc" />
+    <link rel="apple-touch-icon" href="apple.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="background-gradient"></div>
+    <div class="calculator-container">
+      <div class="status-bar">
+        <div class="time" id="current-time">9:41</div>
+        <div class="indicators">
+          <i class="fas fa-signal"></i>
+          <i class="fas fa-wifi"></i>
+          <i class="fas fa-battery-three-quarters"></i>
+        </div>
+      </div>
+
+      <div class="calculator">
+        <div class="display-container">
+          <div class="calculation-history" id="history"></div>
+          <div class="display" id="display">0</div>
+        </div>
+
+        <div class="buttons-grid">
+          <!-- Row 1 -->
+          <button class="btn clear" data-action="clear">AC</button>
+          <button class="btn clear" data-action="toggle-sign">±</button>
+          <button class="btn clear" data-action="percent">%</button>
+          <button class="btn operator" data-action="divide">÷</button>
+
+          <!-- Row 2 -->
+          <button class="btn number" data-number="7">7</button>
+          <button class="btn number" data-number="8">8</button>
+          <button class="btn number" data-number="9">9</button>
+          <button class="btn operator" data-action="multiply">×</button>
+
+          <!-- Row 3 -->
+          <button class="btn number" data-number="4">4</button>
+          <button class="btn number" data-number="5">5</button>
+          <button class="btn number" data-number="6">6</button>
+          <button class="btn operator" data-action="subtract">−</button>
+
+          <!-- Row 4 -->
+          <button class="btn number" data-number="1">1</button>
+          <button class="btn number" data-number="2">2</button>
+          <button class="btn number" data-number="3">3</button>
+          <button class="btn operator" data-action="add">+</button>
+
+          <!-- Row 5 -->
+          <button class="btn number zero" data-number="0">0</button>
+          <button class="btn number" data-action="decimal">.</button>
+          <button class="btn operator equals" data-action="calculate">=</button>
+        </div>
+      </div>
+
+      <div class="home-indicator"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("./service-worker.js")
+            .then((registration) => {
+              console.log(
+                "Service Worker registered with scope:",
+                registration.scope
+              );
+            })
+            .catch((error) => {
+              console.error("Service Worker registration failed:", error);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
