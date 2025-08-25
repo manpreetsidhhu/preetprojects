@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["tool", "creative"],
       github:
         "https://github.com/manpreetsidhhu/preetprojects/tree/main/myseen",
-      icon: "/preetprojects/myseen/logo.PNG",
+      icon: "/myseen/logo.PNG",
     },
     {
       id: "calculator",
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["tool"],
       github:
         "https://github.com/manpreetsidhhu/preetprojects/tree/main/calculator",
-      icon: "/preetprojects/calculator/apple.png",
+      icon: "/calculator/apple.png",
     },
     {
       id: "greenleaf",
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["tool"],
       github:
         "https://github.com/manpreetsidhhu/preetprojects/tree/main/spendsmart",
-      icon: "/preetprojects/spendsmart/images/SpendSmart.png",
+      icon: "/spendsmart/images/SpendSmart.png",
     },
     {
       id: "tictactoe",
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["game"],
       github:
         "https://github.com/manpreetsidhhu/preetprojects/tree/main/tictactoe",
-      icon: "/preetprojects/tictactoe/tic-tac-toe2.png",
+      icon: "/tictactoe/tic-tac-toe2.png",
     },
   ];
 
