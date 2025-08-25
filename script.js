@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "An AI-powered storytelling platform where users can generate creative stories and narratives. Features interactive storytelling with Three.js animations.",
       tags: ["tool", "creative"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/myseen",
+      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/myseen",
       icon: "/preetprojects/myseen/logo.PNG",
     },
     {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "A beautiful iOS-inspired web calculator with glassmorphism design. Responsive and feature-rich with smooth animations and modern UI.",
       tags: ["tool"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/calculator",
+      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/calculator",
       icon: "/preetprojects/calculator/apple.png",
     },
     {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "An agriculture project by Sudhanshu Shekhar showcasing locally grown plants from Punjab. Educational platform for B.Sc. Agriculture students.",
       tags: ["creative", "experiment"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/greenleaf",
+      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/greenleaf",
       icon: null, // Will use fallback icon
     },
     {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "A personal poetry collection by Manpreet S. Sidhu. A beautiful, minimalist platform for sharing poems and creative writing with elegant typography.",
       tags: ["creative"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/poems",
+      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/poems",
       icon: "https://i.ibb.co/RGytJmVx/icon.png",
     },
     {
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "A modern expense tracking PWA built with Tailwind CSS. Features smart budgeting, expense categories, and intuitive financial management tools.",
       tags: ["tool"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/spendsmart",
+      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/spendsmart",
       icon: "/preetprojects/spendsmart/images/SpendSmart.png",
     },
     {
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "A classic Tic-Tac-Toe game with modern animations, custom cursor effects, and sleek design. Features smooth gameplay and responsive interface.",
       tags: ["game"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/tictactoe",
+      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/tictactoe",
       icon: "/preetprojects/tictactoe/tic-tac-toe2.png",
     },
   ];
