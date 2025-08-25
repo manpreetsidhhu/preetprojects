@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "An AI-powered storytelling platform where users can generate creative stories and narratives. Features interactive storytelling with Three.js animations.",
       tags: ["tool", "creative"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/myseen",
+      github:
+        "https://github.com/manpreetsidhhu/preetprojects/tree/main/myseen",
       icon: "/preetprojects/myseen/logo.PNG",
     },
     {
@@ -15,7 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "A beautiful iOS-inspired web calculator with glassmorphism design. Responsive and feature-rich with smooth animations and modern UI.",
       tags: ["tool"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/calculator",
+      github:
+        "https://github.com/manpreetsidhhu/preetprojects/tree/main/calculator",
       icon: "/preetprojects/calculator/apple.png",
     },
     {
@@ -24,7 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "An agriculture project by Sudhanshu Shekhar showcasing locally grown plants from Punjab. Educational platform for B.Sc. Agriculture students.",
       tags: ["creative", "experiment"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/greenleaf",
+      github:
+        "https://github.com/manpreetsidhhu/preetprojects/tree/main/greenleaf",
       icon: null, // Will use fallback icon
     },
     {
@@ -42,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "A modern expense tracking PWA built with Tailwind CSS. Features smart budgeting, expense categories, and intuitive financial management tools.",
       tags: ["tool"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/spendsmart",
+      github:
+        "https://github.com/manpreetsidhhu/preetprojects/tree/main/spendsmart",
       icon: "/preetprojects/spendsmart/images/SpendSmart.png",
     },
     {
@@ -51,7 +55,8 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "A classic Tic-Tac-Toe game with modern animations, custom cursor effects, and sleek design. Features smooth gameplay and responsive interface.",
       tags: ["game"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/tictactoe",
+      github:
+        "https://github.com/manpreetsidhhu/preetprojects/tree/main/tictactoe",
       icon: "/preetprojects/tictactoe/tic-tac-toe2.png",
     },
   ];
@@ -95,13 +100,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     </h3>
                     <p class="card-description">${project.description}</p>
                     <div class="card-buttons">
-                        <a href="/preetprojects/${project.id}/" class="card-btn btn-primary" target="_blank">Live Demo <i class="fas fa-eye"></i></a>
+                        <a href="/${project.id}/" class="card-btn btn-primary" target="_blank">Live Demo <i class="fas fa-eye"></i></a>
                         <a href="${project.github}" class="card-btn btn-secondary" target="_blank">Code <i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div class="card-preview" onclick="window.open('/preetprojects/${project.id}/', '_blank')">
+                <div class="card-preview" onclick="window.open('/${project.id}/', '_blank')">
                     <iframe 
-                        src="/preetprojects/${project.id}/" 
+                        src="/${project.id}/" 
                         class="card-iframe" 
                         title="${project.title} Preview"
                         loading="lazy"
