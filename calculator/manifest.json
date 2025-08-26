@@ -1,20 +1,23 @@
 {
-    "short_name": "iCalc",
-    "name": "iPhone Style Calculator",
-    "icons": [
-      {
-        "src": "/path-to-icon/icon-192x192.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "/path-to-icon/icon-512x512.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
-    ],
-    "start_url": "./",
-    "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
-  }
+  "short_name": "SumX",
+  "name": "SumX - iPhone Style Calculator",
+  "icons": [
+    {
+      "src": "./sumX.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./sumX.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "description": "A modern iPhone-inspired calculator app with smooth animations and responsive design.",
+  "categories": ["utilities", "productivity"],
+  "orientation": "portrait"
+}

@@ -1,16 +1,18 @@
-const CACHE_NAME = "calculator-cache-v1";
+const CACHE_NAME = "sumx-calculator-v1";
 const urlsToCache = [
   "./",
   "./index.html",
   "./style.css",
   "./script.js",
-  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  "./manifest.json",
+  "./sumX.png",
+  "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css",
 ];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log("Opened cache");
+      console.log("SumX cache opened");
       return cache.addAll(urlsToCache);
     })
   );
