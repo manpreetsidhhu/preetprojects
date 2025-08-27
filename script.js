@@ -7,28 +7,28 @@ document.addEventListener("DOMContentLoaded", () => {
         "A modern expense tracking PWA built with Tailwind CSS. Features smart budgeting, expense categories, and intuitive financial management tools.",
       tags: ["tool"],
       github:
-        "https://github.com/manpreetsidhhu/preetprojects/tree/main/spendsmart",
+        "https://github.com/manpreetsidhhu/spendsmart",
       icon: "/spendsmart/images/SpendSmart.png",
     },
     {
-      id: "myseen",
-      title: "MySeen - AI Storytelling",
+      id: "kahaniai",
+      title: "Kahani.ai - AI Storytelling",
       description:
         "An AI-powered storytelling platform where users can generate creative stories and narratives. Features interactive storytelling with Three.js animations.",
       tags: ["tool", "creative"],
       github:
-        "https://github.com/manpreetsidhhu/preetprojects/tree/main/myseen",
-      icon: "/myseen/logo.PNG",
+        "https://github.com/manpreetsidhhu/kahani.ai-storyteller",
+      icon: "/kahaniai/logo.PNG",
     },
     {
-      id: "calculator",
-      title: "SumX - iPhone Style Calculator",
+      id: "sumX",
+      title: "SumX - Calculator",
       description:
         "A modern iPhone-inspired calculator app built with vanilla JavaScript. Features clean interface, smooth animations, full keyboard support, and responsive design.",
       tags: ["tool"],
       github:
-        "https://github.com/manpreetsidhhu/preetprojects/tree/main/calculator",
-      icon: "/calculator/sumX.png",
+        "https://github.com/manpreetsidhhu/sumxcalculator",
+      icon: "/sumX/sumX.png",
     },
     {
       id: "poems",
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
       description:
         "A personal poetry collection by Manpreet S. Sidhu. A beautiful, minimalist platform for sharing poems and creative writing with elegant typography.",
       tags: ["creative"],
-      github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/poems",
+      github: "https://github.com/manpreetsidhhu/poems",
       icon: "https://i.ibb.co/RGytJmVx/icon.png",
     },
     {
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "A classic Tic-Tac-Toe game with modern animations, custom cursor effects, and sleek design. Features smooth gameplay and responsive interface.",
       tags: ["game"],
       github:
-        "https://github.com/manpreetsidhhu/preetprojects/tree/main/tictactoe",
+        "https://github.com/manpreetsidhhu/tic-tac-toe",
       icon: "/tictactoe/tic-tac-toe2.png",
     },
   ];
@@ -60,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
   const scrollToTopBtn = document.querySelector(".scroll-to-top");
 
-  // --- DYNAMICALLY GENERATE PROJECT CARDS ---
   const displayProjects = (projectList) => {
     projectGallery.innerHTML = "";
     if (projectList.length === 0) {
@@ -76,7 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .map((tag) => `<span class="card-tag">${tag}</span>`)
         .join(" ");
 
-      // Create icon HTML - use Font Awesome globe icon if no specific icon
       const iconHTML = project.icon
         ? `<img src="${project.icon}" alt="${project.title} icon" class="project-icon" />`
         : `<i class="fas fa-globe project-icon-fallback"></i>`;
@@ -111,37 +109,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             `;
 
-      // Add iframe load event listener
       const iframe = card.querySelector(".card-iframe");
       const preview = card.querySelector(".card-preview");
 
       iframe.addEventListener("load", () => {
-        // Wait a bit longer for any loaders to finish
         setTimeout(() => {
           iframe.classList.add("loaded");
           preview.classList.add("loaded");
-        }, 2000); // 2 second delay to let loaders finish
+        }, 2000);
       });
 
       projectGallery.appendChild(card);
     });
   };
 
-  // --- FILTER & SEARCH LOGIC ---
   let currentFilter = "all";
   let searchTerm = "";
 
   const filterAndSearchProjects = () => {
     let filteredProjects = projects;
 
-    // Apply category filter
     if (currentFilter !== "all") {
       filteredProjects = filteredProjects.filter((p) =>
         p.tags.includes(currentFilter)
       );
     }
 
-    // Apply search term
     if (searchTerm) {
       filteredProjects = filteredProjects.filter(
         (p) =>
@@ -167,7 +160,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- THEME TOGGLER ---
   const setInitialTheme = () => {
     const savedTheme = localStorage.getItem("theme") || "light";
     document.body.className = savedTheme + "-mode";
@@ -192,7 +184,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --- HEADER & SCROLL-TO-TOP VISIBILITY ---
   window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
       header.classList.add("scrolled");
@@ -203,15 +194,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // --- STATS COUNTERS ---
   const updateStats = () => {
     projectCountEl.textContent = projects.length;
     const uniqueCategories = new Set(projects.flatMap((p) => p.tags));
     categoryCountEl.textContent = uniqueCategories.size;
   };
 
-  // --- INITIALIZATION ---
   setInitialTheme();
   updateStats();
-  displayProjects(projects); // Initial display of all projects
+  displayProjects(projects);
 });

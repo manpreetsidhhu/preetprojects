@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/sumX/(.*)", "destination": "https://sumx.vercel.app/$1" },
+    { "source": "/spendsmart/(.*)", "destination": "https://spendsmartapp.vercel.app/$1" },
+    { "source": "/kahaniai/(.*)", "destination": "https://kahaniai.vercel.app/$1" },
+    { "source": "/poems/(.*)", "destination": "https://kavitadotcom.vercel.app/$1" },
+    { "source": "/tictactoe/(.*)", "destination": "https://t3xgame.vercel.app/$1" }
+  ]
+}
