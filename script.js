@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["tool"],
       github:
         "https://github.com/manpreetsidhhu/spendsmart",
-      icon: "/spendsmart/images/SpendSmart.png",
+      icon: "https://manpreet.vercel.app/preetprojects/spendsmart/images/SpendSmart.png",
     },
     {
       id: "kahaniai",
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["tool", "creative"],
       github:
         "https://github.com/manpreetsidhhu/kahani.ai-storyteller",
-      icon: "/kahaniai/logo.PNG",
+      icon: "https://manpreet.vercel.app/preetprojects/kahaniai/logo.PNG",
     },
     {
       id: "sumX",
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["tool"],
       github:
         "https://github.com/manpreetsidhhu/sumxcalculator",
-      icon: "/sumX/sumX.png",
+      icon: "https://manpreet.vercel.app/preetprojects/sumX/sumX.png",
     },
     {
       id: "poems",
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "A personal poetry collection by Manpreet S. Sidhu. A beautiful, minimalist platform for sharing poems and creative writing with elegant typography.",
       tags: ["creative"],
       github: "https://github.com/manpreetsidhhu/poems",
-      icon: "https://i.ibb.co/RGytJmVx/icon.png",
+      icon: "https://manpreet.vercel.app/preetprojects/poems/icon.png",
     },
     {
       id: "tictactoe",
@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["game"],
       github:
         "https://github.com/manpreetsidhhu/tic-tac-toe",
-      icon: "/tictactoe/tic-tac-toe2.png",
+      icon: "https://manpreet.vercel.app/preetprojects/tictactoe/tic-tac-toe2.png",
     },
   ];
 
