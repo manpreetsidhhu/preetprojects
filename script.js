@@ -1,6 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     {
+      id: "spendsmart",
+      title: "SpendSmart - Expense Tracker",
+      description:
+        "A modern expense tracking PWA built with Tailwind CSS. Features smart budgeting, expense categories, and intuitive financial management tools.",
+      tags: ["tool"],
+      github:
+        "https://github.com/manpreetsidhhu/preetprojects/tree/main/spendsmart",
+      icon: "/spendsmart/images/SpendSmart.png",
+    },
+    {
       id: "myseen",
       title: "MySeen - AI Storytelling",
       description:
@@ -28,16 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
       tags: ["creative"],
       github: "https://github.com/manpreetsidhhu/preetprojects/tree/main/poems",
       icon: "https://i.ibb.co/RGytJmVx/icon.png",
-    },
-    {
-      id: "spendsmart",
-      title: "SpendSmart - Expense Tracker",
-      description:
-        "A modern expense tracking PWA built with Tailwind CSS. Features smart budgeting, expense categories, and intuitive financial management tools.",
-      tags: ["tool"],
-      github:
-        "https://github.com/manpreetsidhhu/preetprojects/tree/main/spendsmart",
-      icon: "/spendsmart/images/SpendSmart.png",
     },
     {
       id: "tictactoe",
