@@ -88,13 +88,13 @@ document.addEventListener("DOMContentLoaded", () => {
                     </h3>
                     <p class="card-description">${project.description}</p>
                     <div class="card-buttons">
-                        <a href="/${project.id}/" class="card-btn btn-primary" target="_blank">Live Demo <i class="fas fa-eye"></i></a>
+                        <a href="/preetprojects/${project.id}/" class="card-btn btn-primary" target="_blank">Live Demo <i class="fas fa-eye"></i></a>
                         <a href="${project.github}" class="card-btn btn-secondary" target="_blank">Code <i class="fab fa-github"></i></a>
                     </div>
                 </div>
-                <div class="card-preview" onclick="window.open('/${project.id}/', '_blank')">
+                <div class="card-preview" onclick="window.open('/preetprojects/${project.id}/', '_blank')">
                     <iframe 
-                        src="/${project.id}/" 
+                        src="/preetprojects/${project.id}/" 
                         class="card-iframe" 
                         title="${project.title} Preview"
                         loading="lazy"
