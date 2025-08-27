@@ -12,23 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: "calculator",
-      title: "iCalc - iOS Style Calculator",
+      title: "SumX - iPhone Style Calculator",
       description:
-        "A beautiful iOS-inspired web calculator with glassmorphism design. Responsive and feature-rich with smooth animations and modern UI.",
+        "A modern iPhone-inspired calculator app built with vanilla JavaScript. Features clean interface, smooth animations, full keyboard support, and responsive design.",
       tags: ["tool"],
       github:
         "https://github.com/manpreetsidhhu/preetprojects/tree/main/calculator",
-      icon: "/calculator/apple.png",
-    },
-    {
-      id: "greenleaf",
-      title: "Greenleaf Plants 🌿",
-      description:
-        "An agriculture project by Sudhanshu Shekhar showcasing locally grown plants from Punjab. Educational platform for B.Sc. Agriculture students.",
-      tags: ["creative", "experiment"],
-      github:
-        "https://github.com/manpreetsidhhu/preetprojects/tree/main/greenleaf",
-      icon: null, // Will use fallback icon
+      icon: "/calculator/sumX.png",
     },
     {
       id: "poems",
